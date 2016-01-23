@@ -15,7 +15,7 @@ class ModulesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Add dirs wwhre to find modules from config
+        // Add dirs where to find modules from config
         foreach (config('modules.dirs') as $dir)
         {
             Modules::addDir(base_path($dir));
