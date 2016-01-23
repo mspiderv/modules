@@ -15,13 +15,13 @@ class ModulesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Add dirs from config
+        // Add dirs wwhre to find modules from config
         foreach (config('modules.dirs') as $dir)
         {
             Modules::addDir(base_path($dir));
         }
 
-        // Boot modules
+        // Boot installed modules
         foreach (Modules::installed() as $module)
         {
             // Register module service providers
@@ -76,6 +76,5 @@ class ModulesServiceProvider extends ServiceProvider
 
         // Bind ModuleFactoryContract implementation
         $this->app->bind('Vitlabs\ModulesContracts\Contracts\ModuleFactoryContract', 'Vitlabs\Modules\ModuleFactory');
-
     }
 }

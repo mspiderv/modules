@@ -134,6 +134,8 @@ class NativeModulesRepository implements ModulesRepositoryContract {
                 // Do we already have this module with the same name ?
                 if (isset($this->modules[$moduleName]))
                 {
+                    // TODO: error
+                    throw new \Exception("Module [$modulleName] already exists.");
                     continue;
                 }
 
