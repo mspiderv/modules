@@ -156,7 +156,7 @@ class NativeModulesRepository implements ModulesRepositoryContract {
 
     protected function loadIfNeed()
     {
-        if ($this->modules == null)
+        if (is_null($this->modules))
         {
             $this->reload();
         }

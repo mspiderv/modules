@@ -37,7 +37,7 @@ class ModulesManager implements ModulesManagerContract {
     {
         $module = $this->repository->get($moduleName);
 
-        if ($module === null)
+        if (is_null($module))
         {
             return false;
         }
@@ -49,7 +49,7 @@ class ModulesManager implements ModulesManagerContract {
     {
         $installer = $module->getInstaller();
 
-        if ($installer !== null)
+        if ( ! is_null($installer))
         {
             call_user_func([$installer, 'install'], $module, $this);
         }
@@ -74,7 +74,7 @@ class ModulesManager implements ModulesManagerContract {
     {
         $module = $this->repository->get($moduleName);
 
-        if ($module === null)
+        if (is_null($module))
         {
             return false;
         }
@@ -86,7 +86,7 @@ class ModulesManager implements ModulesManagerContract {
     {
         $uninstaller = $module->getUninstaller();
 
-        if ($uninstaller !== null)
+        if ( ! is_null($uninstaller))
         {
             call_user_func([$uninstaller, 'uninstall'], $module, $this);
         }
@@ -131,7 +131,7 @@ class ModulesManager implements ModulesManagerContract {
     {
         $module = $this->repository->get($moduleName);
 
-        if ($module === null)
+        if (is_null($module))
         {
             return false;
         }

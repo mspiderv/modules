@@ -25,7 +25,7 @@ class ModuleFactory implements ModuleFactoryContract {
         $data = json_decode($jsonContent);
 
         // Decoding successful ?
-        if ($data === null)
+        if (is_null($data))
         {
             return null;
         }
